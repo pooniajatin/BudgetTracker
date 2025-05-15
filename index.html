@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Budget App</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <header id="header">
+            <div id="title">
+                <h1>Budget Tracker</h1>
+            </div>
+        </header>
+<div class="forms">  
+<form id="income-form">
+    <label for="income-dropdown">Please select type of income</label>
+    <select name="income" id="income-dropdown" required>
+      <option value="salary">Salary</option>
+      <option value="rental">Rental Income</option>
+      <option value="portfolio">Portfolio Income</option>
+      <option value="other">Other Sources</option>
+    </select>
+  
+    <input type="number" min="0"  placeholder="Enter your income" id="income-amount" required>
+    <button type="submit">Click to save!</button>
+  </form>
+  
+  
+  <form id="expenses-form">
+    <label for="expenses-dropdown">Select your expenses</label>
+    <select name="expenses" id="expenses-dropdown" required>
+      <option value="rent">Rent</option>
+      <option value="electricity">Electricity Bill</option>
+      <option value="travel">Travel</option>
+      <option value="grocery">Grocery</option>
+      <option value="misc">Miscellaneous</option>
+    </select>
+  
+    <input type="number" min="0" placeholder="Enter your expense" id="expense-amount" required>
+    <button type="submit">Click to save!</button>
+  </form>
+</div> 
+<div id="transactions" style="margin-top: 20px;">
+    <h3>Transaction History</h3>
+    <table id="transaction-table" style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th style="width: 50%; text-align: left; border-bottom: 2px solid #ccc;">Income</th>
+          <th style="width: 50%; text-align: left; border-bottom: 2px solid #ccc;">Expense</th>
+        </tr>
+      </thead>
+      <tbody id="transaction-body">
+        <!-- Rows will be dynamically added here -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td id="income-total" style="font-weight: bold; color: green;">Total Income: ₹0</td>
+          <td id="expense-total" style="font-weight: bold; color: red;">Total Expenses: ₹0</td>
+        </tr>
+        <tr>
+          <td colspan="2" id="balance-total" style="text-align: center; font-weight: bold; color: blue;">
+            Balance: ₹0
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+  <div id="summary" style="margin-top: 30px; font-size: 18px;"></div>
+  
+        <script src="script.js"></script>
+    </body>
+</html>
